@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HoneyKhutorok</title>
+    <link href="styles.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif|Pacifico&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="shortcut icon" href="images/icon.png" type="images/png">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <a href="honey" class="graficlogo">Медовый  Хуторок</a>
+    </div>
+    <nav>
+        <div class="topnav">
+            <form>
+            <a href="home">
+                Главная
+               </a>
+            <a href="about">
+                О нас
+            </a>
+            <a href="design">
+                Товары
+            </a>
+            <a href="orders">
+               Ваш заказ
+            </a>
+            <a href="contacts">
+                Контакты
+            </a>
+            </form>
+        </div>
+        </nav>
+</header>
+<br/>
+    <form method="POST" th:object="${honeyPack}" th:action="@{/design}" id="tacoForm">
+
+    <div class = "conteiner-1">
+
+        <div class="text-main">
+            <span class="validationError"
+                  th:if="${#fields.hasErrors('honeys')}"
+                  th:errors="*{honeys}">Ingredient Error</span>
+            <h3>Сорта Мёда:</h3>
+            <div class="honey-box" th:each="honey : ${honeys}">
+                <input name="honeys" type="checkbox" th:value="${honey.id}"/>
+                <h3 th:text="${honey.name}">INGREDIENT</h3>
+                <br>
+                <div style="display:inline-block;vertical-align:top;">
+                    <div class="honeytext">
+                        <h2> <img th:src="@{images/picmed.png }" width="300px" align="center" class="leftpic"/>
+                        <STRONG>Описание:</STRONG>
+                        <br>
+                        Мёд имеет светло-коричневый оттенок и кремовую констинсенцию. А Также он очень вкусный ыыыы.
+                    </h2>
+                    </div>
+                </div>
+
+
+        </div>
+            <button>Подтвердить выбор</button>
+    </div>
+
+</form>
+</body>
+</html>

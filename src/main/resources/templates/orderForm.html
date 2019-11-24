@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>HoneyKhutorok</title>
+    <link href="styles.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif|Pacifico&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="shortcut icon" href="images/icon.png" type="images/png">
+</head>
+
+<body>
+<header>
+    <div class="logo">
+        <a href="honey" class="graficlogo">Медовый  Хуторок</a>
+    </div>
+    <nav>
+        <div class="topnav">
+            <form>
+                <a href="home">
+                    Главная
+                </a>
+                <a href="about">
+                    О нас
+                </a>
+                <a href="design">
+                    Товары
+                </a>
+                <a href="orders">
+                    Ваш заказ
+                </a>
+                <a href="contacts">
+                    Контакты
+                </a>
+            </form>
+        </div>
+    </nav>
+</header>
+<br/>
+<form method="POST" th:action="@{/orders}" th:object="${honeyPack}">
+    <div class = "conteiner-1">
+        <div class="text-main" id="wraps">
+
+    <h3>Ваш заказ:</h3>
+            <h3 th:text="${string}">INGREDIENT</h3>
+            <div class="honey-box" th:each="honey : ${honeys}">
+                <h3 th:text="${honey.name}">INGREDIENT</h3>
+
+    </div>
+     <br/>
+    <a th:href="@{/design}" id="another">Заказать Мёд</a>
+     <br/>
+    <input type="submit" value="Создать заказ"/>
+            </div>
+            </div>
+</form>
+</body>
+</html>
+
+

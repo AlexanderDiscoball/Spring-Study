@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<html>
+   <head>
+     <meta charset="UTF-8">
+     <title>HoneyKhutorok</title>
+	 <link href="styles.css" rel="stylesheet" type="text/css"/>
+	 <link href="https://fonts.googleapis.com/css?family=PT+Serif|Pacifico&amp;subset=cyrillic" rel="stylesheet">
+	 <link rel="shortcut icon" href="images/icon.png" type="images/png">
+   </head>
+   <body >
+      <header>
+       <div class="logo">
+          <a href="home" class="graficlogo">Медовый  Хуторок</a>
+	   </div>  
+	   <nav>
+	      <div class="topnav">
+			  <form>
+				  <a href="home">
+					  Главная
+				  </a>
+				  <a href="about">
+					  О нас
+				  </a>
+				  <a href="design">
+					  Товары
+				  </a>
+				  <a href="orders">
+					  Ваш заказ
+				  </a>
+				  <a href="contacts">
+					  Контакты
+				  </a>
+			  </form>
+		  </div>
+	   </nav>
+	  </header>  
+	   <body>
+        <br/>
+		 <div class = "conteiner-1">
+		  <div  class="box-1">
+		      <h3>Box 1</h3>
+			  <p> Добрый день, дамы и господа, 
+			  вашему вниманию
+			  </p>
+		   </div>
+		   <div  class="text-main">
+		      <h3>Алтайский край</h3>
+			  <p> Наш мед пчелы собирают в предгорном районе Алтайского края, недалеко от реки Неня.
+			  Это нетронутое цивилизацией место, где редкостью является даже проезжая машина.<strong>Сорт меда - "Разнотравие"</strong>. Из за погоды в данном
+			  регионе из  года в год вкус может очень отличаться, несмотря на то, что сорт остается тем же.
+			  Причиной этого скорее всего является 
+			  частая смена погоды, ливни могут сменяться сильной жарой или вдруг из  ниоткуда
+              подует сильный ветер.	Все эти факторы в сумме увеличивают разнообразие луговых растений.
+			  <br/> 
+			 <img th:src="@{images/pic.png}" width="750px" align="left"/>
+			 <br/>
+			  <p>Единственное что остается неизменным - это целебные его свойства.
+			   	<strong>
+			  		 Мёд имеет светло-коричневый оттенок и кремовую констинсенцию.
+		   		</strong>
+		   	  </p>
+				  <img th:src="@{/images/med.png}" width="500px" align="left"/>
+
+			  </p>
+		   </div>
+		  </div> 
+   </body>
+
+</html>
